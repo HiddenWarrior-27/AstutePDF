@@ -1,8 +1,6 @@
 from PyPDF2 import PdfFileWriter, PdfFileReader , PdfFileMerger
 from PyQt5.QtWidgets import QWidget, QFileDialog
 import os
-import pytesseract as pt
-import pdf2image as pi
 from PIL import Image
 from tqdm import tqdm
 from docx2pdf import convert
@@ -94,41 +92,6 @@ class PDF(App):
         print(Fore.GREEN,'DONE !!!')
         print()
         print(Fore.GREEN,f"Split and saved at {os.path.dirname(filepath)}")
-
-    def perform_ocr(self):
-        image_counter = 1
-        path = App.openFileNameDialog(self)
-        if path == None:
-            print(Fore.YELLOW,"Terminated")
-            return 
-        pages = pi.convert_from_path(path,dpi=500)
-
-        for page in tqdm(pages,desc = 'Converting to images: Please Wait!!!'):
-            filename = "page_"+str(image_counter)+".jpg"
-            page.save(filename,'JPEG')
-            image_counter+=1
-        print(Fore.GREEN,'DONE !!!')
-        filelimit = image_counter-1
-
-        path = App.saveFileDialog(self)
-        file = os.path.basename(path)+'.txt'
-        outfile = os.path.join(os.path.dirname(path),file)
-        f = open(outfile, "a")
-        
-        for i in tqdm(range(1, filelimit + 1),desc='Performing OCR: Please Wait!!!'):
-            filename = "page_"+str(i)+".jpg"     
-            text = str(((pt.image_to_string(Image.open(filename)))))
-            text = text.replace("-\n", '')    
-            f.write(text)
-
-            if os.path.exists(filename):
-                os.remove(filename)    
-        print(Fore.GREEN,'DONE !!!')
-        print()
-        f.close()
-        print(Fore.GREEN,f"OCR performed and saved at {os.path.dirname(outfile)}")
-        time.sleep(0.5)
-        os.startfile(outfile)
 
 
     def doctopdf(self):
