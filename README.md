@@ -1,4 +1,4 @@
-# Astute-PDF
+# AstutePDF
 
 ### **A repository containing the GUI for an application which enables the users to perform simple yet intriguing PDF operations. These include,**
 
