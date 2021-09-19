@@ -33,3 +33,13 @@ Activate the python command line in the same directory and type the following co
 ## Usage
 * Once the installation is done, right click the `launcher.py` and select `Open with -> Python`.
 * Ignore the warnings and wait for the _AstutePDF_ dialog box to open.
+
+## Acknowledgement
+**Contributors**
+
+<a href="https://github.com/HiddenWarrior-27/AstutePDF/graphs/contributors">
+  <br>
+  <img src="https://contrib.rocks/image?repo=HiddenWarrior-27/AstutePDF" />
+</a>
+
+
