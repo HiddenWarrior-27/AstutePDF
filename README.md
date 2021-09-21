@@ -25,9 +25,9 @@
 ### spaCy Setup:
 [spaCy](https://spacy.io/) is an open-source software library for advanced natural language processing, written in the programming languages Python and Cython. For the spacy setup, you can follow the webguide provided in the official site of spaCy. The scope of the package for this repository is to summarise the contents of a text file
 
-Activate the python command line in the same directory and type the following commands subsequently,
-`pip install -U pip setuptools wheel`
-`pip install -U spacy`
+Activate the python command line in the same directory and type the following commands subsequently, <br>
+`pip install -U pip setuptools wheel` <br>
+`pip install -U spacy` <br>
 `python -m spacy download en_core_web_s`
 
 ## Usage
